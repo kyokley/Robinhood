@@ -5,15 +5,11 @@ import warnings
 from enum import Enum
 
 import requests
-import six
 from six.moves.urllib.parse import unquote
 from six.moves.urllib.request import getproxies
 from six.moves import input
 
-if six.PY3: #pragma: no cover
-    import exceptions as RH_exception
-else:       #pragma: no cover
-    import exceptions as RH_exception
+from Robinhood import exceptions as RH_exception
 
 class Bounds(Enum):
     """enum for bounds in `historicals` endpoint"""
@@ -27,7 +23,7 @@ class Transaction(Enum):
     SELL = 'sell'
 
 
-class Robinhood:
+class Robinhood(object):
     """wrapper class for fetching/parsing Robinhood endpoints"""
     endpoints = {
         "login": "https://api.robinhood.com/api-token-auth/",

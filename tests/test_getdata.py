@@ -6,7 +6,7 @@ import pytest
 from flaky import flaky
 import requests
 
-from Robinhood import Robinhood
+from Robinhood.Robinhood import Robinhood
 import helpers
 if six.PY2:
     from Robinhood import RH_exception

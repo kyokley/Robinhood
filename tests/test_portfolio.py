@@ -1,14 +1,11 @@
 from os import path
 from datetime import datetime
-import six
 
 import pytest
 from flaky import flaky
 
-from Robinhood import Robinhood
+from Robinhood.Robinhood import Robinhood
 import Robinhood.exceptions as RH_exception
-if six.PY2:
-    from Robinhood import RH_exception
 
 import helpers
 

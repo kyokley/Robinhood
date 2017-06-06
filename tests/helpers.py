@@ -3,7 +3,7 @@ import configparser
 
 import requests
 
-from Robinhood import Robinhood
+from Robinhood.Robinhood import Robinhood
 
 def get_config(config_filename):
     """parse test config file
