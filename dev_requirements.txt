@@ -1,0 +1,4 @@
+-e .
+bpython
+pdbpp
+tox
