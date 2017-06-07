@@ -1,6 +1,4 @@
 from os import path
-from datetime import datetime
-import six
 
 import pytest
 from flaky import flaky
@@ -8,8 +6,6 @@ import requests
 
 from Robinhood.Robinhood import Robinhood
 import helpers
-if six.PY2:
-    from Robinhood import RH_exception
 
 HERE = path.abspath(path.dirname(__file__))
 ROOT = path.dirname(HERE)

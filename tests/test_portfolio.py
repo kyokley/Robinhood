@@ -1,8 +1,6 @@
 from os import path
-from datetime import datetime
 
 import pytest
-from flaky import flaky
 
 from Robinhood.Robinhood import Robinhood
 import Robinhood.exceptions as RH_exception
