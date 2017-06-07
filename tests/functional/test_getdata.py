@@ -24,6 +24,7 @@ TESTABLE_KEYS = [
     'last_trade_price_source',
     'instrument'
 ]
+
 @pytest.mark.incremental
 class TestQuoteHelpers:
     """wrapper to test quote architecture in order"""
@@ -53,7 +54,7 @@ class TestQuoteHelpers:
     def test_validate_fail_quote(self):
         """validate bad-path exception"""
         with pytest.raises(NameError):
-            data = self.rh_obj.quote_data(self.fake_ticker)
+            self.rh_obj.quote_data(self.fake_ticker)
 
     def test_validate_get_quote(self):
         """validate `get_quote` call"""
@@ -159,7 +160,7 @@ class TestFundamentalsHelpers:
     def test_validate_fail_fundamental(self):
         """validate bad-path exception"""
         with pytest.raises(NameError):
-            data = self.rh_obj.get_fundamentals(self.fake_ticker)
+            self.rh_obj.get_fundamentals(self.fake_ticker)
 
     @flaky
     def test_validate_fundamental_wrapper(self):

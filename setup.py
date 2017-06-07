@@ -84,7 +84,7 @@ class PyTest(TestCommand):
         import shlex
         #import here, cause outside the eggs aren't loaded
         import pytest
-        pytest_commands = []
+
         try:    #read commandline
             pytest_commands = shlex.split(self.pytest_args)
         except AttributeError:  #use defaults
