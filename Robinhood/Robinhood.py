@@ -88,6 +88,7 @@ class Robinhood(object):
         """Prompts user for username and password and calls login()."""
         if not username:
             username = input("Username: ")
+        print()
         password = getpass.getpass()
         return self.login(username=username, password=password)
 
@@ -209,6 +210,8 @@ class Robinhood(object):
 
         return data
 
+    get_quote = quote_data
+
     def get_quote_list(self, stock='', key=''):
         """Returns multiple stock info and keys from quote_data (prompt if blank)
 
@@ -243,11 +246,6 @@ class Robinhood(object):
         else:
             res.append(append_stock(data))
         return res
-
-    def get_quote(self, stock=''):
-        """wrapper for quote_data"""
-        data = self.quote_data(stock)
-        return data["symbol"]
 
     def get_historical_quotes(
             self,
