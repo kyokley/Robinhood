@@ -276,7 +276,7 @@ class Robinhood(object):
             bounds = Bounds(bounds)
 
         params = {
-            'symbols': stock.upper() if isinstance(stock, basestring) else ','.join(stock).upper(),
+            'symbols': stock.upper() if isinstance(stock, str) else ','.join(stock).upper(),
             'interval': interval,
             'span': span,
             'bounds': bounds.name.lower()
