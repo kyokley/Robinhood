@@ -84,9 +84,10 @@ class Robinhood(object):
         }
         self.session.headers = self.headers
 
-    def login_prompt(self): #pragma: no cover
+    def login_prompt(self, username=None): #pragma: no cover
         """Prompts user for username and password and calls login()."""
-        username = input("Username: ")
+        if not username:
+            username = input("Username: ")
         password = getpass.getpass()
         return self.login(username=username, password=password)
 
